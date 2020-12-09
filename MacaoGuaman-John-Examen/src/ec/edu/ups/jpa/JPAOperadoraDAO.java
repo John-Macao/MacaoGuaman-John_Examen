@@ -23,5 +23,12 @@ public class JPAOperadoraDAO extends JPAGenericDAO<Operadora, Integer> implement
 		return oper;
 	}
 	
+	
+	public Operadora buscarO(int id_oper) {
+		String jpql = "SELECT o FROM Operadora o WHERE o.id=" + id_oper ;
+		Operadora oper = (Operadora) em.createQuery(jpql).getSingleResult();
+		return oper;
+	}
+	
 
 }

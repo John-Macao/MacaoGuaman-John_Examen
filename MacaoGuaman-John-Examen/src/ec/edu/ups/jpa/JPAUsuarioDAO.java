@@ -23,5 +23,12 @@ public class JPAUsuarioDAO extends JPAGenericDAO<Usuario, Integer> implements Us
 		return user;
 	}
 	
+	public Usuario buscarU(int id_user) {
+		String jpql = "SELECT u FROM Usuario u WHERE u.id=" + id_user ;
+		Usuario user = (Usuario) em.createQuery(jpql).getSingleResult();
+		return user;
+	}
+
+
 	
 }

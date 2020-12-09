@@ -21,5 +21,11 @@ public class JPATipoDAO extends JPAGenericDAO<Tipo, Integer> implements TipoDAO 
 		return tipo;
 	}
 	
+	public Tipo buscarT(int id_tipo) {
+		String jpql = "SELECT t FROM Tipo t WHERE t.id=" + id_tipo ;
+		Tipo tipo = (Tipo) em.createQuery(jpql).getSingleResult();
+		return tipo;
+	}
+	
 
 }
