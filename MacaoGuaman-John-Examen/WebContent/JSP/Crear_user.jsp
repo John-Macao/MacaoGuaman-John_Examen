@@ -4,15 +4,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Crear Usuario</title>
+
+	<meta charset="ISO-8859-1">
+	<title>Crear Usuario</title>
+	<link rel="stylesheet" type="text/css" href="/MacaoGuaman-John-Examen/CSS/crearU.css">
 </head>
 <body>
 
 
 	<header>
-        <h1>Crear Usuario</h1>
- 
+ 		<FONT SIZE=7>  Agenda Telefónica </font> </br>
     </header> 
 
 
@@ -20,11 +21,12 @@
 	<c:set var="listaO" scope="request" value="${listaOperadora}" />
 	<c:set var="listaT" scope="request" value="${listaTipo}" />
 
+	<h2 class="tema">Agregar un Usuario </h2>
     
     <form class="form" action="/MacaoGuaman-John-Examen/AgregarUController" method="post">
     
         <label for="user">Cédula: </label>
-        <input type="text" name="cedula" value="123">
+        <input type="text" name="cedula" >
         
         <label for="user">Nombre: </label>
         <input type="text" name="nombre">
@@ -59,10 +61,11 @@
         <input type="submit" value="Añadir Telefono ">
     </form>
     
+    <div class="espacio"></div>
     
     <form class="form" action="/MacaoGuaman-John-Examen/HTML/index.html" method="post">
     
-        <input type="submit" value=" Regresar">
+        <input type="submit" value=" Finalizar ">
     </form>
 
 

@@ -4,19 +4,29 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta charset="ISO-8859-1">
 <title> Lista Completa</title>
+<link rel="stylesheet" type="text/css" href="/MacaoGuaman-John-Examen/CSS/crearU.css">
+
+
 </head>
+
 <body>
 
+
+	<header>
+ 		<FONT SIZE=7>  Agenda Telefónica </font> </br>
+    </header> 
 
 
 	<c:set var="listaU" scope="request" value="${listaUsuarios}" />
 	
-	
-	<label for="user"> Busquedas </label> <br/>
+	<h2 class="tema"> Lista de Usuarios </h2>
 	
 	<form class="form" action="/MacaoGuaman-John-Examen/Filtro" method="post">
+		<h2 class="tema"> Busqueda </h2>
+	
         <label for="user"> Por Cédula: </label>
         <input type="text" name="cedula" placeholder="Buscar por cédula">
         
@@ -26,17 +36,21 @@
         <input type="submit" value="Buscar ">
     </form>
 	
+<div class="espacio"></div>
 	
-	<table class="table">
-		<tr>
+	<table class="table" id="recto">
+		
+		<tr class="ver">
 			<td class="titulo"><strong>Nombres </strong></td>
 			<td class="titulo"><strong>Apellidos </strong></td>
 			<td class="titulo"><strong>Cédula</strong></td>
 			<td class="titulo"><strong>Correo</strong></td>
+			<td class="titulo"><strong>Opción</strong></td>
+			
 			
 		</tr>
 		<c:forEach var="t" items="${listaUsuarios}">
-			<tr>
+			<tr class="ver2">
 				<td>${t.nombre}</td>
 				<td>${t.apellido}</td>
 				<td>${t.cedula}</td>
@@ -47,9 +61,9 @@
 			</tr>
 		</c:forEach>
 	
-	
 	</table>
 	
+	<div class="espacio"></div>
 	
 	<form class="form" action="/MacaoGuaman-John-Examen/HTML/index.html" method="post">
     

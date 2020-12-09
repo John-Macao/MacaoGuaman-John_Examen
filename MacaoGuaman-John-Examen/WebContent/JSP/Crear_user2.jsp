@@ -6,14 +6,16 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Crear Usuario</title>
+<link rel="stylesheet" type="text/css" href="/MacaoGuaman-John-Examen/CSS/crearU.css">
+
 </head>
 <body>
 
 
 	<header>
-        <h1>Crear Usuario</h1>
- 
+ 		<FONT SIZE=7>  Agenda Telefónica </font> </br>
     </header> 
+
 
 
 	<c:set var="listaO" scope="request" value="${listaOperadora}" />
@@ -27,7 +29,7 @@
 	<c:set var="contra" scope="request" value="${contra}" />
 	
 	
-	
+	<h2 class="tema">Agregar un Usuario </h2>
 	
 	
 	<c:set var="number" scope="request" value="${number1}" />

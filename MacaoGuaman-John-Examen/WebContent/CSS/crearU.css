@@ -1,0 +1,98 @@
+@charset "ISO-8859-1";
+
+body {
+    background-color: forestgreen;
+}
+
+
+header {
+    width: 100%;
+    color: black;
+    background-color: darkgreen;
+    float: left;
+}
+
+header h1 {
+    width: 58%;
+    text-align: center;
+    float: left;
+    
+}
+
+FONT {
+	margin-left: 40%;
+}
+
+.tema {
+	margin-left: 30px !important;
+	padding-top: 10px !important;
+	color: black !important;
+}
+
+
+hr {
+    background-color: black;
+    border: black solid 1px;
+}
+
+form{
+	margin-left: 36%;
+	width: 25%;
+	border: 10%;
+}
+
+.form{
+	background-color: darkolivegreen;
+	border: solid black;
+}
+
+
+input, .form label, .form select{
+	margin-top: 10px;
+	margin-bottom: 20px;
+	margin-left: 30%;
+}
+
+.form label{
+	padding-right: 10px;
+	color: black;
+}
+
+.btng{
+	width: 150px;
+	height: 30px
+}
+
+
+.table{
+	margin-left: 15%;
+	width: 70%;
+	border: 10%;
+	background-color: darkolivegreen;
+}
+
+td{
+	color: black;
+}
+
+.titulo{
+	color: black !important;
+}
+
+.ver {
+	background-color: darkgreen ;
+}
+
+.ver2 {
+	background-color: darkolivegreen ;
+}
+
+
+
+#recto{
+	border: solid black;
+}
+
+.espacio{
+	padding-top: 10px;
+}
