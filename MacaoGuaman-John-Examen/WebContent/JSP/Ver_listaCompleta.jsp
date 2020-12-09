@@ -16,7 +16,7 @@
 	
 	<label for="user"> Busquedas </label> <br/>
 	
-	<form class="form" action="/MacaoGuaman-John-Examen/Filtrado method="post">
+	<form class="form" action="/MacaoGuaman-John-Examen/Filtro" method="post">
         <label for="user"> Por Cédula: </label>
         <input type="text" name="cedula" placeholder="Buscar por cédula">
         

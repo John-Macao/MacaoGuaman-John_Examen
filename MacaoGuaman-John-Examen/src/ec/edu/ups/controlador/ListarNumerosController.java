@@ -67,30 +67,18 @@ public class ListarNumerosController extends HttpServlet {
 		
 		System.out.println("ver id usuario confirmooo    "  +  id_user);
 		
-		
-		
-		tel = telDAO.buscarTelefono(10, 15);
-		
-		System.out.println("si vaaaaa +++++++   "   + tel.getTel());
-		
-		listaTelefonos = telDAO.find();
+		listaTelefonos = telDAO.listaTELEFONOS(id_user);
 		
 		List<Telefono> listaTelefonos2 = new ArrayList<Telefono>();
 		
 		for (int i = 0; i<listaTelefonos.size(); i++ ) {
 			tel = listaTelefonos.get(i);
 			
+			//Telefono tel2 = new Telefono();
+			//tel2 = telDAO.buscarTelefono(id_user, tel.getId());
 			
-			System.out.println(" tttttt   "   + tel.getId());
-			System.out.println(" uuuuuu   "   + id_user);
-			
-			
-			
-			Telefono tel2 = new Telefono();
-			tel2 = telDAO.buscarTelefono(id_user, tel.getId());
-			
-			int id_tipo = telDAO.buscarIDT(tel2.getId(), id_user );
-			int id_oper = telDAO.buscarIDO(tel2.getId(), id_user);
+			int id_tipo = telDAO.buscarIDT(tel.getId());
+			int id_oper = telDAO.buscarIDO(tel.getId());
 			//int id_user =  telDAO.buscarIDU(tel.getId());
 			
 			
@@ -98,19 +86,24 @@ public class ListarNumerosController extends HttpServlet {
 			tipo = tipDao.buscarT(id_tipo);
 	    	operadora = operDao.buscarO(id_oper);
 	    	
-	    	tel2.setUsuario(user);
-	    	tel2.setTipo(tipo);
-	    	tel2.setOperadora(operadora);
+	    	tel.setUsuario(user);
+	    	tel.setTipo(tipo);
+	    	tel.setOperadora(operadora);
 			
-	    	listaTelefonos2.add(new Telefono(tel2.getId(), tel2.getTel(), tel2.getUsuario(), tel2.getTipo(), tel2.getOperadora() ));
+	    	System.out.println("		" + tel.getTel());
+	    	System.out.println("		" + tel.getTipo().getTip());
+	    	System.out.println("		" + tel.getOperadora().getOper());
+	    	
+	    	
+	    	listaTelefonos2.add(new Telefono(tel.getId(), tel.getTel(), tel.getUsuario(), tel.getTipo(), tel.getOperadora() ));
 		}
 		
 		
 		//System.out.println("tamaño list tel2  "  + listaTelefonos2.size());
-		//request.setAttribute("listaTelefonos2", listaTelefonos2);
+		request.setAttribute("listaTelefonos2", listaTelefonos2);
 		
 		
-		//this.getServletContext().getRequestDispatcher("/JSP/Ver_numeros.jsp").forward(request, response);
+		this.getServletContext().getRequestDispatcher("/JSP/Ver_numeros.jsp").forward(request, response);
 		
 	}
 

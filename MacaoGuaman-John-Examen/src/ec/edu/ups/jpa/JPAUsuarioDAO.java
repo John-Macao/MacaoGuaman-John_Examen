@@ -7,6 +7,7 @@ import java.util.List;
 
 import ec.edu.ups.dao.UsuarioDAO;
 import ec.edu.ups.modelo.Operadora;
+import ec.edu.ups.modelo.Telefono;
 import ec.edu.ups.modelo.Usuario;
 
 public class JPAUsuarioDAO extends JPAGenericDAO<Usuario, Integer> implements UsuarioDAO {
@@ -30,5 +31,11 @@ public class JPAUsuarioDAO extends JPAGenericDAO<Usuario, Integer> implements Us
 	}
 
 
+	public List<Usuario> listaUser(String cedula) {
+		String jpql = "SELECT u FROM Usuario u WHERE u.cedula= '" + cedula + "' ";
+		List<Usuario> user = em.createQuery(jpql).getResultList();
+		return user;
+	}
+	
 	
 }
