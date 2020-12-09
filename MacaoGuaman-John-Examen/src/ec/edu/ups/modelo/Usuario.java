@@ -126,8 +126,8 @@ public class Usuario implements Serializable {
 
 
 
-	public void setTelefono(ArrayList<Telefono> telefono) {
-		this.telefonos = telefono;
+	public void setTelefono(ArrayList<Telefono> telefonos) {
+		this.telefonos = telefonos;
 	}
 	
 	

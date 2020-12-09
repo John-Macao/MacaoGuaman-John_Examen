@@ -14,5 +14,12 @@ public class JPATipoDAO extends JPAGenericDAO<Tipo, Integer> implements TipoDAO 
 		super(Tipo.class);
 	}
 	
+	public Tipo buscarTipoNombre(String nombre_tipo) {
+		String jpql = "SELECT t FROM Tipo t WHERE t.tip= '" + nombre_tipo + "'";
+		Tipo tipo = (Tipo) em.createQuery(jpql).getSingleResult(); 
+
+		return tipo;
+	}
+	
 
 }

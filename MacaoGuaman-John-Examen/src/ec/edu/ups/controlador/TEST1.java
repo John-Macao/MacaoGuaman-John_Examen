@@ -17,7 +17,7 @@ public class TEST1 {
 		TipoDAO tipDAO = DAOFactory.getFactory().getTipoDAO();
 		Tipo tip = new Tipo(0, "Movil");
 		tipDAO.create(tip);
-		
+				
 		OperadoraDAO operDAO = DAOFactory.getFactory().getOperadoraDAO();
 		Operadora oper = new Operadora(0, "Movistar");
 		operDAO.create(oper);
