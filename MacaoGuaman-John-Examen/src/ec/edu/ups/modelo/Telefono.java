@@ -24,11 +24,11 @@ public class Telefono implements Serializable {
 	@JoinColumn
 	private Usuario usuario;
 	
-	@OneToOne
+	@ManyToOne
 	@JoinColumn
 	private Tipo tipo;
 	
-	@OneToOne
+	@ManyToOne
 	@JoinColumn
 	private Operadora operadora;
 	

@@ -1,41 +1,37 @@
 package ec.edu.ups.controlador;
 
-import java.io.IOException;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import ec.edu.ups.dao.DAOFactory;
+import ec.edu.ups.dao.OperadoraDAO;
+import ec.edu.ups.dao.TelefonoDAO;
+import ec.edu.ups.dao.TipoDAO;
+import ec.edu.ups.dao.UsuarioDAO;
+import ec.edu.ups.modelo.Operadora;
+import ec.edu.ups.modelo.Telefono;
+import ec.edu.ups.modelo.Tipo;
+import ec.edu.ups.modelo.Usuario;
 
-/**
- * Servlet implementation class TEST1
- */
-@WebServlet("/TEST1")
-public class TEST1 extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public TEST1() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+public class TEST1 {
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+	public static void main(String[] args) {
+		
+		TipoDAO tipDAO = DAOFactory.getFactory().getTipoDAO();
+		Tipo tip = new Tipo(0, "Movil");
+		tipDAO.create(tip);
+		
+		OperadoraDAO operDAO = DAOFactory.getFactory().getOperadoraDAO();
+		Operadora oper = new Operadora(0, "Movistar");
+		operDAO.create(oper);
+		
+		UsuarioDAO userDAO = DAOFactory.getFactory().getUsuarioDAO();
+		Usuario user = new Usuario(0, "098766777", "Michael", "Macao", "jmacao@est.ups.edu.ec", "macao123");
+		userDAO.create(user);
+		
+		
+		TelefonoDAO telDAO = DAOFactory.getFactory().getTelefonoDAO();
+		Telefono tel = new Telefono(0, "0987654321", user, tip, oper);
+		
+		telDAO.create(tel);
+		
+		
 	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
-
 }

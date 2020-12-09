@@ -1,6 +1,8 @@
 package ec.edu.ups.modelo;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+
 import javax.persistence.*;
 
 /**
@@ -21,14 +23,13 @@ public class Tipo implements Serializable {
 	@Column(nullable=false)
 	private String tip;
 	
-	@OneToOne
-	private Telefono telefono;
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "tipo")
+	private ArrayList<Telefono> telefonos = new ArrayList<Telefono>();
 	
-	public Tipo(int id, String tip, Telefono telefono) {
+	public Tipo(int id, String tip) {
 		super();
 		this.id = id;
 		this.tip = tip;
-		this.telefono = telefono;
 	}
 
 	
@@ -56,14 +57,18 @@ public class Tipo implements Serializable {
 		this.tip = tip;
 	}
 
-
-	public Telefono getTelefono() {
-		return telefono;
+	
+	public ArrayList<Telefono> getTelefono() {
+		return telefonos;
 	}
 
 
-	public void setTelefono(Telefono telefono) {
-		this.telefono = telefono;
+	public void setTelefono(ArrayList<Telefono> telefonos) {
+		this.telefonos = telefonos;
+	}
+	
+	public void addTelefonos(Telefono telefono) {
+		this.telefonos.add(telefono);
 	}
 
 

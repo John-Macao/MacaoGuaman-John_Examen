@@ -1,6 +1,8 @@
 package ec.edu.ups.modelo;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+
 import javax.persistence.*;
 
 /**
@@ -20,15 +22,14 @@ public class Operadora implements Serializable {
 	@Column(nullable=false)
 	private String oper;
 	
-	@OneToOne
-	private Telefono telefono;
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "operadora")
+	private ArrayList<Telefono> telefonos = new ArrayList<Telefono>();
 	
 	
-	public Operadora(int id, String oper, Telefono telefono) {
+	public Operadora(int id, String oper) {
 		super();
 		this.id = id;
 		this.oper = oper;
-		this.telefono = telefono;
 	}
 
 	public Operadora() {
@@ -51,12 +52,17 @@ public class Operadora implements Serializable {
 		this.oper = oper;
 	}
 
-	public Telefono getTelefono() {
-		return telefono;
+	public ArrayList<Telefono> getTelefono() {
+		return telefonos;
 	}
 
-	public void setTelefono(Telefono telefono) {
-		this.telefono = telefono;
+
+	public void setTelefono(ArrayList<Telefono> telefonos) {
+		this.telefonos = telefonos;
+	}
+	
+	public void addTelefonos(Telefono telefono) {
+		this.telefonos.add(telefono);
 	}
 
 	public static long getSerialversionuid() {

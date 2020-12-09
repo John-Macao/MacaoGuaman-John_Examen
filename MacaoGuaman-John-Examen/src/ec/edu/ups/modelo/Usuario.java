@@ -31,11 +31,10 @@ public class Usuario implements Serializable {
 	private String contrasena;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "usuario")
-	private ArrayList<Telefono> telefono = new ArrayList<Telefono>();
+	private ArrayList<Telefono> telefonos = new ArrayList<Telefono>();
 	
 	
-	public Usuario(int id, String cedula, String nombre, String apellido, String correo, String contrasena,
-			ArrayList<Telefono> telefono) {
+	public Usuario(int id, String cedula, String nombre, String apellido, String correo, String contrasena) {
 		super();
 		this.id = id;
 		this.cedula = cedula;
@@ -43,7 +42,6 @@ public class Usuario implements Serializable {
 		this.apellido = apellido;
 		this.correo = correo;
 		this.contrasena = contrasena;
-		this.telefono = telefono;
 	}
 
 	public Usuario() {
@@ -123,13 +121,18 @@ public class Usuario implements Serializable {
 
 
 	public ArrayList<Telefono> getTelefono() {
-		return telefono;
+		return telefonos;
 	}
 
 
 
 	public void setTelefono(ArrayList<Telefono> telefono) {
-		this.telefono = telefono;
+		this.telefonos = telefono;
+	}
+	
+	
+	public void addTelefonos(Telefono telefono) {
+		this.telefonos.add(telefono);
 	}
 
 

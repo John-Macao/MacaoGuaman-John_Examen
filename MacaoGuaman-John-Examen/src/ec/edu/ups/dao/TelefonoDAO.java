@@ -1,5 +1,7 @@
 package ec.edu.ups.dao;
 
-public interface TelefonoDAO {
+import ec.edu.ups.modelo.Telefono;
+
+public interface TelefonoDAO extends GenericDAO<Telefono, Integer> {
 
 }

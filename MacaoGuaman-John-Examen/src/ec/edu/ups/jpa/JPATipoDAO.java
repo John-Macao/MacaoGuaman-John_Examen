@@ -1,5 +1,18 @@
 package ec.edu.ups.jpa;
 
-public class JPATipoDAO {
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import ec.edu.ups.dao.TipoDAO;
+import ec.edu.ups.modelo.Tipo;
+
+public class JPATipoDAO extends JPAGenericDAO<Tipo, Integer> implements TipoDAO {
+	
+	public JPATipoDAO() {
+		super(Tipo.class);
+	}
+	
 
 }
